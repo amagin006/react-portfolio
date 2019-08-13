@@ -12,7 +12,6 @@ li { list-style: none; }
 h1,h2,h3,h4,h5,h6,a,img,iframe,p,ul,li {
   margin:0;
   padding:0;
-  color: #000;
   vertical-align:baseline;
   text-decoration: none;
 }
@@ -40,6 +39,12 @@ $breakpoints: (
 .fl-item-c { align-items: center; }
 .fl-ju-ce { justify-content: center; }
 
+.wrapper {
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /*-----------------------------------------*/
 /*-------------  Header  ------------------*/
 /*-----------------------------------------*/
@@ -66,16 +71,63 @@ $breakpoints: (
 /*-----------------------------------------*/
 /*------------- Home ----------------------*/
 /*-----------------------------------------*/
-
-.main-visual-block {
-  background: #E7E7E9;
-  height: 100vh;
+.main-visual {
   position: relative;
-  margin-bottom: 400px;
-  .title-top {
-    font-size: 2.6rem;
+}
+
+.main-visual-wrapper {
+  position: relative;
+  height: 100vh;
+  .main-visual-title-block {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 15;
+    .title-top {
+      font-size: 2.6rem;
+    }
+    h1 {
+      font-size: 6.4rem;
+    }
   }
-  h1 {
-    font-size: 3.4rem;
+}
+
+.who-sec {
+  height: 100vh;
+  .wrapper {
+    height: 100%;
+    position: relative;
   }
+  .photo_1 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    max-width: 500px;
+    height: 80vh;
+    img {
+      box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.3);
+      border: 4px solid #ffffff;
+      height: 100%;
+    } 
+  }
+  .who-text-block {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    max-width: 400px;
+    width: 50%;
+    h2 {
+      font-family: 'Julius Sans One', sans-serif;
+      font-size: 4rem;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 2.0rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+  }
+
 }

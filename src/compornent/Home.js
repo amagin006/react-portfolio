@@ -4,10 +4,16 @@ class Home extends React.Component {
   
   render() {
     return (
-      <div className="main-visual-block">
-        <div className="title-top">Web & Mobile Developer</div>
-        <h1>SHOTA IWAMOTO</h1>
-      </div> 
+      <>
+        <div className="main-visual">
+          <div className="main-visual-wrapper">
+            <div className="main-visual-title-block">
+              <div className="title-top">Web & Mobile Developer</div>
+              <h1>SHOTA IWAMOTO</h1>
+            </div>
+          </div>
+        </div>
+      </>
     )
   }
 }
