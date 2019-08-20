@@ -1,0 +1,215 @@
+/* -------------- resrt ---------------- */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, a, img, iframe, p, ul, li {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* -------------- common ------------------ */
+.fl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fl-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fl-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.fl-bt {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fl-wr {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.fl-item-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fl-ju-ce {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper {
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*-----------------------------------------*/
+/*-------------  Header  ------------------*/
+/*-----------------------------------------*/
+.header {
+  position: fixed;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  top: 96vh;
+  left: 40px;
+  width: 100vh;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  z-index: 100;
+  height: 60px;
+}
+
+.header ul {
+  width: 60%;
+  margin: 20px auto 0;
+  font-size: 2rem;
+}
+
+.header ul li a {
+  color: #000000;
+}
+
+/*-----------------------------------------*/
+/*------------- Home ----------------------*/
+/*-----------------------------------------*/
+.main-visual {
+  position: relative;
+}
+
+.main-visual-wrapper {
+  position: relative;
+  height: 100vh;
+}
+
+.main-visual-wrapper .main-visual-title-block {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 15;
+}
+
+.main-visual-wrapper .main-visual-title-block .title-top {
+  font-size: 2.6rem;
+}
+
+.main-visual-wrapper .main-visual-title-block h1 {
+  font-size: 6.4rem;
+}
+
+.who-sec {
+  height: 100vh;
+}
+
+.who-sec .wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.who-sec .photo_1 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 70%;
+  max-width: 690px;
+}
+
+.who-sec .photo_1 img {
+  -webkit-box-shadow: 4px 4px 10px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 4px 10px 3px rgba(0, 0, 0, 0.3);
+  border: 4px solid #ffffff;
+  width: 100%;
+}
+
+.who-sec .who-text-block {
+  padding: 10px 15px;
+  background: #ffffff;
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  max-width: 400px;
+  width: 50%;
+  opacity: 0.6;
+}
+
+.who-sec .who-text-block h2 {
+  opacity: 1;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 30px;
+}
+
+.who-sec .who-text-block p {
+  opacity: 1;
+  font-size: 2.0rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.work-content {
+  position: relative;
+}
+
+.work-item-wrapper {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+}
+
+.work-item-wrapper .work-item-box {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.work-item-wrapper .work-item-box img {
+  width: 100%;
+}
+
+.sample-box {
+  height: 1200px;
+  width: 100%;
+  display: block;
+}
+/*# sourceMappingURL=common.css.map */
