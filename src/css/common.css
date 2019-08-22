@@ -76,6 +76,10 @@ h1, h2, h3, h4, h5, h6, a, img, iframe, p, ul, li {
   margin: 0 auto;
 }
 
+.noSidebar {
+  overflow-x: hidden;
+}
+
 /*-----------------------------------------*/
 /*-------------  Header  ------------------*/
 /*-----------------------------------------*/
@@ -185,22 +189,24 @@ h1, h2, h3, h4, h5, h6, a, img, iframe, p, ul, li {
 }
 
 .work-content {
-  position: relative;
+  height: 1600px;
 }
 
 .work-item-wrapper {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
+  position: relative;
 }
 
-.work-item-wrapper .work-item-box {
-  position: absolute;
-  width: 80%;
+.work-item-wrapper .work-box {
+  position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.work-item-wrapper .work-item-box {
+  width: 100%;
 }
 
 .work-item-wrapper .work-item-box img {
@@ -208,8 +214,7 @@ h1, h2, h3, h4, h5, h6, a, img, iframe, p, ul, li {
 }
 
 .sample-box {
-  height: 1200px;
-  width: 100%;
-  display: block;
+  background: red;
+  height: 200px;
 }
 /*# sourceMappingURL=common.css.map */

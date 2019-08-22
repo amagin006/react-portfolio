@@ -45,6 +45,10 @@ $breakpoints: (
   margin: 0 auto;
 }
 
+.noSidebar {
+  overflow-x: hidden;
+}
+
 /*-----------------------------------------*/
 /*-------------  Header  ------------------*/
 /*-----------------------------------------*/
@@ -139,18 +143,19 @@ $breakpoints: (
 }
 
 .work-content {
-  position: relative;
+  height: 1600px;
 }
 .work-item-wrapper {
-  height: 100vh;
-  width: 100%;
-  position: fixed;  
-  .work-item-box {
-    position: absolute;
-    width: 80%;
+  position: relative;
+  .work-box {
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 80%;
+  }
+  .work-item-box {
+    width: 100%;
     img {
       width: 100%;
     }
@@ -159,7 +164,6 @@ $breakpoints: (
 }
 
 .sample-box {
-  height: 1200px;
-  width: 100%;
-  display: block;
+  background: red;
+  height: 200px;
 }
