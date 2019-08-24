@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import '../compornent/common/style.css'
+import '../css/common.scss';
 import Header from './header/Header';
-import Home from './Home';
+import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
-import Page404 from './Page404'
-import '../css/common.scss';
+import Page404 from './pages/Page404'
 
 class App extends React.Component {
 
