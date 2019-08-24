@@ -2,8 +2,7 @@ import React from 'react';
 import WorkImgBox from '../WorkImgBox';
 import posed from 'react-pose';
 
-import work1 from '../../img/work1.jpg';
-import work2 from '../../img/work2.jpg';
+import { workImages } from  '../../constants/workImages';
 
 const Box = posed.div({
   visible: { opacity: 1, delay: 600 },
@@ -46,15 +45,22 @@ class Work extends React.Component {
     return (
       <div className="work-content">
         <div className="work-item-wrapper">
-          <Box className="work-box" pose={ this.state.visibleItem === 1 ? 'visible' : 'hidden'}>
+          {workImages.map(image => {
+            return (
+              <Box className="work-box" pose={ this.state.visibleItem === image.itemNum ? 'visible' : 'hidden'}>
+                <WorkImgBox img={image.url}/>
+              </Box> 
+            )
+          })}
+          {/* <Box className="work-box" pose={ this.state.visibleItem === 1 ? 'visible' : 'hidden'}>
             <WorkImgBox img={work1}/>
           </Box>
           <Box className="work-box" pose={ this.state.visibleItem === 2 ? 'visible' : 'hidden'}>
-            <WorkImgBox img={work2}/>
+            <WorkImgBox img={}/>
           </Box> 
           <Box className="work-box" pose={ this.state.visibleItem === 3 ? 'visible' : 'hidden'}>
             <WorkImgBox img={work1}/>
-          </Box>
+          </Box> */}
         </div>
         <div className="sample-box"></div>
       </div>
