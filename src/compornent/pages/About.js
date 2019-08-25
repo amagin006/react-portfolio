@@ -30,9 +30,16 @@ class About extends React.Component {
               <div className="bg-3-c bg-3-3"></div>
               <div className="bg-3-c bg-3-4"></div>
               <div className="bg-3-c bg-3-5"></div>
+              <div className="skill-box">
+                <h3 className="skill-t line-1">Skills</h3>
+                <div className="skill-t line-2">iOS / Swift / Objective-C / Java / Android</div>
+                <div className="skill-t line-3">HTML5 / CSS3 / JavaScript / React / jQuery</div>
+                <div className="skill-t line-4">WordPress / SASS / Webpack / Gulp</div>
+                <div className="skill-t line-5">Git / Bootstrap / AdobeXD / ...and more</div>
+              </div>
             </div>
             <div className="who-text-block" data-delighter>
-              <h2>Who I am</h2>
+              <h2>About</h2>
               <p>Hi, I’m Shota Iwamoto from Japan. <br />
                 Currently, I’ve learned Web & Mobile development in Vancouver, Canada.</p>
               <p>I’m passionate about solve problem and writing code that works well and good performance. </p>
