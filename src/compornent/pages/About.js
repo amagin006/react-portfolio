@@ -4,21 +4,8 @@ import Delighters from '../common/delighters'
 
 class About extends React.Component {
 
-  constructor(props) {
-    super(props)
-    const body = document.querySelector('body');
-    body.className += ' noSidebar'
-  }
-
   componentDidMount() {
     Delighters.init();
-    window.addEventListener('scroll', this.listenToScroll)
-    window.addEventListener('mousewheel', this.listenToScroll)
-  }
-  
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.listenToScroll)
-    window.removeEventListener('mousewheel', this.listenToScroll)
   }
     
   render() {
@@ -26,7 +13,7 @@ class About extends React.Component {
       <>
         <div className="who-sec">
           <div className="a-section1" data-delighter>
-            <div className="section-inner">
+            <div className="section-inner" data-delighter>
               <div className="bg-1 left" data-delighter></div>
             </div>
           </div> 
@@ -52,7 +39,6 @@ class About extends React.Component {
                   <div className="skill-t line-3">JavaScript / React / Redux / HTML5 / CSS3 </div>
                   <div className="skill-t line-4">WordPress /  jQuery / SASS / Webpack / Gulp</div>
                   <div className="skill-t line-5">Git / pug / Bootstrap / AdobeXD / ...and more</div>
-                  <div className="skill-t line-6"></div>
                   <div className="skill-disc">
                     <div className="disc-title">What I Aim</div>
                     <p>My Goal is not only builting web and app, also understanding businesses and creating good user expriences.</p>
@@ -60,12 +46,13 @@ class About extends React.Component {
                   </div>
 
                 <div className="ref-box">
-                  <a href="https://www.linkedin.com/in/shota-iwamoto001/">
+                  <a className="linkedin" href="https://www.linkedin.com/in/shota-iwamoto001/">
                     linkedin
                   </a>
+                  <a className="mail" href="mailto:shota.iwamoto.shota@gmail.com">Mail</a>
                 </div>
                 </div>
-                <div className="desc-box"></div>
+                <div className="disc-box"></div>
               </div>
             </div>
             <div className="who-text-block" data-delighter>

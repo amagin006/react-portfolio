@@ -15,7 +15,7 @@ class Work extends React.Component {
   constructor(props) {
     super(props)
     const body = document.querySelector('body');
-    body.className += ' noSidebar'
+    body.classList.add('noSidebar')
   }
 
   state = {
