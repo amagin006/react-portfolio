@@ -6,9 +6,9 @@ class Header extends React.Component {
     return (
       <div className="header">
         <ul className="fl fl-bt">
-          <li><NavLink activeStyle={{ color: 'red'}} exact to='/'>Home</NavLink></li>
-          <li><NavLink activeStyle={{ color: 'red'}} to='/about'>About</NavLink></li>
-          <li><NavLink activeStyle={{ color: 'red'}} to='/Work'>Work</NavLink></li>
+          <li className="home"><NavLink activeStyle={{ color: 'red'}} exact to='/'>Home</NavLink></li>
+          <li className="about"><NavLink activeStyle={{ color: 'red'}} to='/about'>About</NavLink></li>
+          <li className="work"><NavLink activeStyle={{ color: 'red'}} to='/works'>Work</NavLink></li>
         </ul>
       </div>
     )

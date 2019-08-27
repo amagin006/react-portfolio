@@ -1,5 +1,5 @@
 import React from 'react';
-import { aboutImages } from  '../../constants/workImages';
+import { aboutImages } from  '../../constants/workContentInfo';
 import Delighters from '../common/delighters'
 
 class About extends React.Component {
@@ -15,6 +15,7 @@ class About extends React.Component {
           <div className="a-section1" data-delighter>
             <div className="section-inner" data-delighter>
               <div className="bg-1 left" data-delighter></div>
+              <span>scroll</span>
             </div>
           </div> 
 
@@ -42,7 +43,6 @@ class About extends React.Component {
                   <div className="skill-disc">
                     <div className="disc-title">What I Aim</div>
                     <p>My Goal is not only builting web and app, also understanding businesses and creating good user expriences.</p>
-
                   </div>
 
                 <div className="ref-box">
@@ -50,6 +50,7 @@ class About extends React.Component {
                     linkedin
                   </a>
                   <a className="mail" href="mailto:shota.iwamoto.shota@gmail.com">Mail</a>
+                  <a className="github" href="https://github.com/amagin006">GitHub</a>
                 </div>
                 </div>
                 <div className="disc-box"></div>
