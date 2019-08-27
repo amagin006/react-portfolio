@@ -52,55 +52,24 @@ $breakpoints: (
 /*-------------  Header  ------------------*/
 /*-----------------------------------------*/
 .header {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: 1000;
-  ul {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    li {
-      position: absolute;
-      &.home {
-        left: 50%;
-        top: 20px;
-        transform: translateX(-50%);
-      }
-      &.about {
-        transform: rotate(90deg) translateX(-50%);
-        transform-origin: top left;
-        right: -20px;  
-        top: 50%;
-        
-      }
-      &.work {
-        transform: rotate(-90deg) translateX(-50%);
-        transform-origin: top left;
-        left: 20px;  
-        top: 50%;
-      }
-      &::before, &::after {
-        content: '';
-        position: absolute;
-        width: 40px;
-        height: 1px;
-        transform: scale(0, 1);
-        top: 10px;
-        background: #797979;
-        transition: all 0.3s ease-out; 
-      }
-      &::before {
-        left: -40px;
-      }
-      &::after {
-        left: 46px;
-      }
-      &:hover::before, &:hover::after {
-        width: 30px;
-        transform: scale(1);
-      }
-    }
+  li {
+    position: fixed;
+    z-index: 1000;
+  }
+  .home {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .about {
+    transform: rotate(90deg) translateY(-50%);
+    right: 10px;
+    top: 50%;
+  }
+  .work {
+    transform: rotate(-90deg) translateY(-50%);
+    left: 10px;
+    top: 50%;
   }
 }
 /*-----------------------------------------*/
@@ -216,7 +185,7 @@ $breakpoints: (
       background: #ffffff; 
       transform: rotate(-12deg);
       transform-origin: left bottom;
-      transition: width 1s ease-in;
+      transition: width 0.6s ease-in;
     }
     &.delighter.started  {
       &::after {
@@ -416,7 +385,6 @@ $breakpoints: (
   }
 }
 
-
 @keyframes hiddenRight {
   99%{
     transform: translateY(-50%);  
@@ -427,7 +395,8 @@ $breakpoints: (
 }
 
 .work-content {
-  height: 1600px;
+  height: 2800px;
+
 }
 .work-item-wrapper {
   position: relative;
@@ -443,11 +412,21 @@ $breakpoints: (
     img {
       width: 100%;
     }
+    .w-title-box {
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      color: #fff;
+      .title {
+        font-size: 3.0rem;
+      }
+      .disc {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+      }
+      .text {
+        font-size: 1.6rem;
+      }
+    }
   }
-
-}
-
-.sample-box {
-  background: red;
-  height: 200px;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { aboutImages } from  '../../constants/workImages';
+import { aboutImages } from  '../../constants/workContentInfo';
 import Delighters from '../common/delighters'
 
 class About extends React.Component {
