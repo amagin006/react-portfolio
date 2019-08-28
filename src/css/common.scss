@@ -104,67 +104,13 @@ $breakpoints: (
   }
 }
 
-.a-section1 {
-  height: 100vh;
-  .section-inner {
-    height: 100%;
-    opacity: 0;
-    background: url(../img/IMGP5090.jpg) no-repeat center center/ cover;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-    span {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      &::after {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 1px;
-        height: 30px;
-        background: #000;
-        left: 50%;
-      }
-    }
-    &.started {
-      opacity: 1;
-      transition-delay: 3s;
-      transition: all 1.6s ease-out;
-    }
-  }
-  &.started {
-    padding: 50px;
-    transition: all 0.8s ease-out;
-  }
-  .bg-1 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    background: #d4f9e5;
-    transition: all 0.6s ease-out;
-    transition-delay: 0.8s;
-    transform: rotate(45deg) scale(0, 1);
-    &.left {
-      width: 50%;
-      opacity: 0.8;
-      &.started {
-        transform: rotate(45deg) scale(1, 4);
-      }
-    }
-  }
-}
 
-.a-section2 {
-  height: 100vh;
-}
 .who-sec {
   height: calc(100vh * 3);
+  overflow-x: hidden;
   .wrapper {
-    height: 100%;
     position: relative;
+    height: 100%;
   }
   .photo_1 {
     position: absolute;
@@ -197,6 +143,75 @@ $breakpoints: (
       height: 100%;
     } 
   }
+}
+
+.a-section1 {
+  height: 100vh;
+  .section-inner {
+    height: 100%;
+    opacity: 0;
+    background: url(../img/IMGP5090.jpg) no-repeat center center/ cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    span {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: 30px;
+        background: #000;
+        left: 50%;
+      }
+    }
+    &.started {
+      animation: a-sectionOpacity 3s forwards;
+      transition: all 1.6s ease-out 1s;
+    }
+  }
+  &.started {
+    padding: 50px;
+    transition: all 1.8s ease-out 2.0s;
+  }
+  .bg-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: #d4f9e5;
+    transition: all 0.6s ease-out;
+    transition-delay: 1.4s;
+    transform: rotate(45deg) scale(0, 1);
+    &.left {
+      width: 50%;
+      opacity: 0.8;
+      &.started {
+        transform: rotate(45deg) scale(1, 4);
+      }
+    }
+  }
+}
+
+@keyframes a-sectionOpacity {
+  0% {
+    opacity: 0.4; 
+  }
+  60% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.a-section2 {
+  height: 100vh;
 }
 
 .a-section3 {
@@ -375,7 +390,7 @@ $breakpoints: (
     &.delighter.started {
       opacity: 1;
       transform: translate(0, -50%);
-      transition: all .8s ease-out; 
+      transition: all .8s ease-out 0.8s; 
     }
   }
   &.delighter.started .who-text-block {
@@ -441,12 +456,37 @@ $breakpoints: (
   opacity: 0;
   z-index: 1;
 }
-
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 350ms ease-in;
+  &.who-sec::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    display: block;
+    background: #c5edf9; 
+    animation: aboutMove 1.6s forwards;
+    z-index: 5000;
+  }
 }
-
+@keyframes aboutMove {
+  0% {  
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(-100%);  
+  }
+}
 .fade-exit {
   opacity: 1;
   z-index: 1;
