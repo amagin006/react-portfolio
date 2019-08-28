@@ -406,6 +406,12 @@ $breakpoints: (
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
+    max-width: 700px;
+    a {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
   .work-item-box {
     width: 100%;
@@ -429,4 +435,23 @@ $breakpoints: (
       }
     }
   }
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 350ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+  z-index: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 350ms ease-in;
 }
