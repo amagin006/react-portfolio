@@ -11,6 +11,7 @@ class Work extends React.Component {
 
   state = {
     visibleItem: 1,
+    bottom: false,
   }
 
   componentDidMount() {
@@ -24,11 +25,20 @@ class Work extends React.Component {
   listenToScroll = () => {
     const scrolled = window.pageYOffset;
     if (scrolled < 700 ) {
-      this.setState({ visibleItem: 1 })
+      this.setState({ 
+        visibleItem: 1,
+        bottom: false,
+       })
     } else if (scrolled < 1400) {
-      this.setState({ visibleItem: 2 })
+      this.setState({ 
+        visibleItem: 2,
+        bottom: false,
+       })
     } else if (scrolled < 2100) {
-      this.setState({ visibleItem: 3 })
+      this.setState({ 
+        visibleItem: 3,
+        bottom: true,
+       })
     }
   }
 
@@ -69,6 +79,7 @@ class Work extends React.Component {
               </TransitionGroup>
             )} />
           </div>
+          <div style={{ opacity: this.state.bottom ? 0 : 1 }} className="w-scroll-arrow">scroll</div>
         </div>
       </div>
     )

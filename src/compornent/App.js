@@ -8,11 +8,27 @@ import Continer from './Container';
 
 class App extends React.Component {
 
+  state = {
+    overflow: false
+  }
+
+  onClick = () => {
+    this.setState({overflow: true})
+    setTimeout(() => {
+      this.setState({overflow: false})
+    }, 1500);
+  }
+
   render() {
+
+    console.log(this.state.overflow)
     return (
       <BrowserRouter>
-        <div>
-          <Header /> 
+        <div style={{ 
+          overflow: this.state.overflow ? "hidden" : "none",
+          height: this.state.overflow ? "100vh" : "auto",
+        }}>
+          <Header clickLinked={this.onClick} /> 
           <Continer />
         </div> 
       </BrowserRouter>

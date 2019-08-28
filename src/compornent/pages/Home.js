@@ -2,12 +2,6 @@ import React from 'react';
 
 class Home extends React.Component {
 
-  constructor(props) {
-    super(props)
-    const body = document.querySelector('body');
-    body.classList.remove('noSidebar')
-  }
-
   render() {
     return (
       <>

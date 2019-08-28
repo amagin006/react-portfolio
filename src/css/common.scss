@@ -104,7 +104,7 @@ $breakpoints: (
   }
 }
 
-
+// About Page
 .who-sec {
   height: calc(100vh * 3);
   overflow-x: hidden;
@@ -170,13 +170,13 @@ $breakpoints: (
       }
     }
     &.started {
-      animation: a-sectionOpacity 3s forwards;
-      transition: all 1.6s ease-out 1s;
+      opacity: 1;
+      transition: all 1.6s ease-out 0.6s;
     }
   }
   &.started {
     padding: 50px;
-    transition: all 1.8s ease-out 2.0s;
+    transition: all 0.8s ease-out 1.8s;
   }
   .bg-1 {
     position: absolute;
@@ -196,19 +196,6 @@ $breakpoints: (
     }
   }
 }
-
-@keyframes a-sectionOpacity {
-  0% {
-    opacity: 0.4; 
-  }
-  60% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 
 .a-section2 {
   height: 100vh;
@@ -409,12 +396,29 @@ $breakpoints: (
   }
 }
 
+// Work Page
 .work-content {
   height: 2800px;
-
 }
 .work-item-wrapper {
   position: relative;
+  .w-scroll-arrow {
+    position: fixed;
+    font-size: 1.8rem;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease-in;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 30px;
+      background: #000;
+      left: 50%; 
+    }
+  }
   .work-box {
     position: fixed;
     top: 50%;
@@ -452,24 +456,74 @@ $breakpoints: (
   }
 }
 
+// transtion animation
 .fade-enter {
+  opacity: 1;
+  z-index: 1;
+}
+.fade-exit {
   opacity: 0;
   z-index: 1;
+  
 }
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 350ms ease-in;
-  &.who-sec::after {
-    position: absolute;
-    content: "";
-    width: 0;
+  &.m-content-box {
+    .main-visual-wrapper::before, .main-visual-title-block, .work-item-wrapper {
+      animation: homeMoveBg 1.5s forwards;
+    }
+    .main-visual-wrapper::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 0;
+      top: 0;
+      right: 0;
+      display: block;
+      animation: homeMove 1.2s forwards;
+      z-index: 5000;
+      background: #cafee6;
+    }
+    .who-sec::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      right: 0;
+      display: block;
+      animation: aboutMove 1.2s forwards;
+      z-index: 5000;
+      background: #cafee6;
+    }
+    .work-content::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: block;
+      animation: workMove 1.2s forwards;
+      z-index: 5000;
+      background: #cafee6; 
+    }
+  }
+}
+@keyframes homeMove {
+  0% {  
+  }
+  40% {
     height: 100%;
-    top: 0;
-    right: 0;
-    display: block;
-    background: #c5edf9; 
-    animation: aboutMove 1.6s forwards;
-    z-index: 5000;
+  }
+  60% {
+    height: 100%;
+    transform: translateY(0);
+  }
+  100% {
+    height: 100%;
+    transform: translateY(100%);  
   }
 }
 @keyframes aboutMove {
@@ -487,11 +541,29 @@ $breakpoints: (
     transform: translateX(-100%);  
   }
 }
-.fade-exit {
-  opacity: 1;
-  z-index: 1;
+@keyframes workMove {
+  0% {  
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(100%);  
+  }
 }
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transition: opacity 350ms ease-in;
+@keyframes homeMoveBg {
+  0% {  
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.4;
+  }
 }

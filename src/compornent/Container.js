@@ -16,15 +16,17 @@ class Container extends React.Component {
           <CSSTransition
             key={this.props.location.key}
             classNames="fade"
-            timeout={3000}
+            timeout={1500}
             >
-            <Switch location={location}>
-              <Route exact path='/' component={Home} 
-                pageClass={() => {this.changePageClass()}}/>
-              <Route exact path='/about' component={About}/>
-              <Route path='/works' component={Works}/>
-              <Route component={Page404} />
-            </Switch>
+            <div className="m-content-box">
+              <Switch location={location}>
+                <Route exact path='/' component={Home} 
+                  pageClass={() => {this.changePageClass()}}/>
+                <Route exact path='/about' component={About}/>
+                <Route path='/works' component={Works}/>
+                <Route component={Page404} />
+              </Switch>
+            </div>
           </CSSTransition>
         </TransitionGroup>
       )} />
