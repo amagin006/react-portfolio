@@ -16,12 +16,11 @@ class App extends React.Component {
     this.setState({overflow: true})
     setTimeout(() => {
       this.setState({overflow: false})
-    }, 1500);
+    }, 2000);
   }
 
   render() {
 
-    console.log(this.state.overflow)
     return (
       <BrowserRouter>
         <div style={{ 

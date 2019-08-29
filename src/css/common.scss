@@ -399,26 +399,7 @@ $breakpoints: (
 // Work Page
 .work-content {
   height: 2800px;
-}
-.work-item-wrapper {
   position: relative;
-  .w-scroll-arrow {
-    position: fixed;
-    font-size: 1.8rem;
-    left: 50%;
-    bottom: 10%;
-    transform: translateX(-50%);
-    transition: all 0.5s ease-in;
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 1px;
-      height: 30px;
-      background: #000;
-      left: 50%; 
-    }
-  }
   .work-box {
     position: fixed;
     top: 50%;
@@ -455,6 +436,26 @@ $breakpoints: (
     }
   }
 }
+.work-item-wrapper {
+  .w-scroll-arrow {
+    position: fixed;
+    font-size: 1.8rem;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease-in;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 30px;
+      background: #000;
+      left: 50%; 
+    }
+  }
+
+}
 
 // transtion animation
 .fade-enter {
@@ -483,31 +484,26 @@ $breakpoints: (
       display: block;
       animation: homeMove 1.2s forwards;
       z-index: 5000;
-      background: #cafee6;
+      background-image: linear-gradient(to bottom, #cdfffc, #d0fffc, #d4fffd, #d7fffd, #dafffd, #d8fdfe, #d6fbfe, #d4f9ff, #cff4ff, #ceeeff, #cfe8ff, #d2e1ff);
+    }
+    .who-sec::after, .work-content::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      display: block;
+      z-index: 5000;
     }
     .who-sec::after {
-      position: absolute;
-      content: "";
-      width: 0;
-      height: 100%;
-      top: 0;
       right: 0;
-      display: block;
       animation: aboutMove 1.2s forwards;
-      z-index: 5000;
-      background: #cafee6;
+      background-image: linear-gradient(to left, #d2e1ff, #cfe8ff, #ceeeff, #cff4ff, #d4f9ff, #d6fbfe, #d8fdfe, #dafffd, #d7fffd, #d4fffd, #d0fffc, #cdfffc);
     }
     .work-content::after {
-      position: absolute;
-      content: "";
-      width: 0;
-      height: 100%;
-      top: 0;
       left: 0;
-      display: block;
       animation: workMove 1.2s forwards;
-      z-index: 5000;
-      background: #cafee6; 
+      background-image: linear-gradient(to left, #cdfffc, #d0fffc, #d4fffd, #d7fffd, #dafffd, #d8fdfe, #d6fbfe, #d4f9ff, #cff4ff, #ceeeff, #cfe8ff, #d2e1ff);
     }
   }
 }
