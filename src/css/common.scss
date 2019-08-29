@@ -407,7 +407,10 @@ $breakpoints: (
     transform: translate(-50%, -50%);
     width: 80%;
     max-width: 700px;
+    height: 63vh;
     a {
+      width: 100%;
+      height: 100%;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -415,9 +418,9 @@ $breakpoints: (
   }
   .work-item-box {
     width: 100%;
-    img {
-      width: 100%;
-    }
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
     .w-title-box {
       position: absolute;
       bottom: 20px;
@@ -454,24 +457,67 @@ $breakpoints: (
       left: 50%; 
     }
   }
+}
 
+//work Detail
+.work-detail-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .wd-hero-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    width: 80%;
+    height: 63vh;
+    opacity: 0;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    animation: workImgFill 1.8s forwards 0.8s;
+    img {
+      width: 100%;
+    }
+  }
+}
+@keyframes workImgFill {
+  0% { 
+    opacity: 1;
+  }
+  60%{ 
+    max-width: 700px;
+    width: 80%;
+    height: 63vh; 
+  }
+  61% {
+    max-width: unset;
+  }
+  100% {
+    opacity: 1;
+    max-width: unset;
+    width: 100%;
+    height: 100vh;
+  }
 }
 
 // transtion animation
-.fade-enter {
-  opacity: 1;
-  z-index: 1;
-}
+
 .fade-exit {
   opacity: 0;
   z-index: 1;
-  
+  .work-box {
+    display: none;
+  }
 }
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 350ms ease-in;
   &.m-content-box {
-    .main-visual-wrapper::before, .main-visual-title-block, .work-item-wrapper {
+    .main-visual-wrapper::before, 
+    .main-visual-title-block, 
+    .work-item-wrapper, .work-inner {
       animation: homeMoveBg 1.5s forwards;
     }
     .main-visual-wrapper::after {
@@ -482,11 +528,12 @@ $breakpoints: (
       top: 0;
       right: 0;
       display: block;
-      animation: homeMove 1.2s forwards;
+      animation: topToBottom 1.2s forwards;
       z-index: 5000;
       background-image: linear-gradient(to bottom, #cdfffc, #d0fffc, #d4fffd, #d7fffd, #dafffd, #d8fdfe, #d6fbfe, #d4f9ff, #cff4ff, #ceeeff, #cfe8ff, #d2e1ff);
     }
-    .who-sec::after, .work-content::after {
+    .who-sec::after, .work-content::after,
+    .work-detail-inner::after {
       position: absolute;
       content: "";
       width: 0;
@@ -497,17 +544,27 @@ $breakpoints: (
     }
     .who-sec::after {
       right: 0;
-      animation: aboutMove 1.2s forwards;
+      animation: rightToLeft 1.2s forwards;
       background-image: linear-gradient(to left, #d2e1ff, #cfe8ff, #ceeeff, #cff4ff, #d4f9ff, #d6fbfe, #d8fdfe, #dafffd, #d7fffd, #d4fffd, #d0fffc, #cdfffc);
     }
     .work-content::after {
       left: 0;
-      animation: workMove 1.2s forwards;
+      animation: leftToRight 1.2s forwards;
       background-image: linear-gradient(to left, #cdfffc, #d0fffc, #d4fffd, #d7fffd, #dafffd, #d8fdfe, #d6fbfe, #d4f9ff, #cff4ff, #ceeeff, #cfe8ff, #d2e1ff);
     }
+    .work-detail-inner::after {
+      bottom: 0;
+      top: unset;
+      height: 0;
+      width: 100%;
+      animation: bottomToTop 1.2s forwards;
+      background-image: linear-gradient(to top, #cdfffc, #d0fffc, #d4fffd, #d7fffd, #dafffd, #d8fdfe, #d6fbfe, #d4f9ff, #cff4ff, #ceeeff, #cfe8ff, #d2e1ff);
+    }
+    
   }
 }
-@keyframes homeMove {
+
+@keyframes topToBottom {
   0% {  
   }
   40% {
@@ -522,7 +579,7 @@ $breakpoints: (
     transform: translateY(100%);  
   }
 }
-@keyframes aboutMove {
+@keyframes rightToLeft {
   0% {  
   }
   40% {
@@ -537,7 +594,7 @@ $breakpoints: (
     transform: translateX(-100%);  
   }
 }
-@keyframes workMove {
+@keyframes leftToRight {
   0% {  
   }
   40% {
@@ -550,6 +607,21 @@ $breakpoints: (
   100% {
     width: 100%;
     transform: translateX(100%);  
+  }
+}
+@keyframes bottomToTop {
+  0% {  
+  }
+  40% {
+    height: 100%;
+  }
+  60% {
+    height: 100%;
+    transform: translateY(0);
+  }
+  100% {
+    height: 100%;
+    transform: translateY(-100%);  
   }
 }
 @keyframes homeMoveBg {

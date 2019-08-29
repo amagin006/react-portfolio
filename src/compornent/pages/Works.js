@@ -45,20 +45,21 @@ class Work extends React.Component {
     
     return (
       <div className="work-content">
-        <div className="work-box">
-          <Link to={`${this.props.location.pathname}/${url}`}>
-            <div className="work-item-box">
-              <img src={imgUrl} alt=""/>
-              <div className="w-title-box">
-                <div className="title">{title}</div>
-                <div className="disc">{disc}</div>
-                <div className="text">{text}</div>
+        <div className="work-inner">
+          <div className="work-box">
+            <Link to={`${this.props.location.pathname}/${url}`}>
+              <div className="work-item-box" style={{ backgroundImage: `url(${imgUrl})` }}>
+                <div className="w-title-box">
+                  <div className="title">{title}</div>
+                  <div className="disc">{disc}</div>
+                  <div className="text">{text}</div>
+                </div>
               </div>
-            </div>
-          </Link>
-        </div>
-        <div className="work-item-wrapper">
-          <div style={{ opacity: this.state.bottom ? 0 : 1 }} className="w-scroll-arrow">scroll</div>
+            </Link>
+          </div>
+          <div className="work-item-wrapper">
+            <div style={{ opacity: this.state.bottom ? 0 : 1 }} className="w-scroll-arrow">scroll</div>
+          </div>
         </div>
       </div>
     )

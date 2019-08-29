@@ -2,13 +2,19 @@ import React from 'react';
 import { workContents } from  '../../constants/workContentInfo'; 
 
 class Work1 extends React.Component {
-  itemDetail(url) {
-    const workItem = Object.values(workContents).filter(works => works.url === url) 
 
-    const { imgUrl, title, disc } = workItem[0]
+  itemDetail(propUrl) {
+    const workItem = Object.values(workContents).filter(works => works.url === propUrl) 
+
+    const { imgUrl, title, disc,  } = workItem[0]
     return (
-      <div>
-        <img src={imgUrl} alt=""/>
+      <div className="work-detail-sec">
+        <div className="work-detail-inner"></div>
+        <div className="work-detail-bg">
+          <div className="wd-hero-box" style={{ backgroundImage: `url(${imgUrl})` }}>
+            {/* <img src={imgUrl} alt=""/> */}
+          </div>
+        </div>
         <div>{disc}</div>
         <div>{title}</div>
       </div> 
