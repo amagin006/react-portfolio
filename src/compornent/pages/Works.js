@@ -1,17 +1,12 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from "react-transition-group"
+import { Link } from 'react-router-dom';
 
 import { workContents } from  '../../constants/workContentInfo';
-import Works1 from '../WorkItem/Work1'
-import Works2 from '../WorkItem/Work2';
-import Works3 from '../WorkItem/Work3';
-import Page404 from '../pages/Page404';
 
 class Work extends React.Component {
-
   state = {
     visibleItem: 1,
+    bottom: false,
   }
 
   componentDidMount() {
@@ -25,51 +20,44 @@ class Work extends React.Component {
   listenToScroll = () => {
     const scrolled = window.pageYOffset;
     if (scrolled < 700 ) {
-      this.setState({ visibleItem: 1 })
+      this.setState({ 
+        visibleItem: 1,
+        bottom: false,
+       })
     } else if (scrolled < 1400) {
-      this.setState({ visibleItem: 2 })
+      this.setState({ 
+        visibleItem: 2,
+        bottom: false,
+       })
     } else if (scrolled < 2100) {
-      this.setState({ visibleItem: 3 })
+      this.setState({ 
+        visibleItem: 3,
+        bottom: true,
+       })
     }
   }
 
   render() {
-    const work = workContents.filter(work => {
-      return this.state.visibleItem === work.itemNum
+    const work = Object.values(workContents).filter(works=> {
+      return this.state.visibleItem === works.itemNum
     })
-    const { url, imgUrl, title, disc, text } = work[0]
+    const { url, imgUrl, title, disc } = work[0]
+    
     return (
       <div className="work-content">
-        <div className="work-item-wrapper">
+        <div className="work-inner">
           <div className="work-box">
-            <Route render={({ location }) =>  (
-              <TransitionGroup>
-              <CSSTransition
-                      key={this.props.location.key}
-                      classNames="fade"
-                      timeout={300}
-                    >
-                <Switch location={location}>
-                  <Route exact path='/works'>
-                    <Link to={`${this.props.location.pathname}${url}`}>
-                      <div className="work-item-box">
-                        <img src={imgUrl} alt=""/>
-                        <div className="w-title-box">
-                          <div className="title">{title}</div>
-                          <div className="disc">{disc}</div>
-                          <div className="text">{text}</div>
-                        </div>
-                      </div>
-                    </Link>
-                  </Route>
-                  <Route exact path="/works/work1" component={Works1}/>
-                  <Route exact path="/works/work2" component={Works2}/>
-                  <Route exact path="/works/work3" component={Works3}/> 
-                  <Route component={Page404} />
-                </Switch>
-              </CSSTransition>
-            </TransitionGroup>
-            )} />
+            <Link to={`${this.props.location.pathname}/${url}`}>
+              <div className="work-item-box" style={{ backgroundImage: `url(${imgUrl})` }}>
+                <div className="w-title-box">
+                  <div className="title">{title}</div>
+                  <div className="disc">{disc}</div>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="work-item-wrapper">
+            <div style={{ opacity: this.state.bottom ? 0 : 1 }} className="w-scroll-arrow">scroll</div>
           </div>
         </div>
       </div>
