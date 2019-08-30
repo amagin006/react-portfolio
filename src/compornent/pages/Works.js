@@ -41,7 +41,7 @@ class Work extends React.Component {
     const work = Object.values(workContents).filter(works=> {
       return this.state.visibleItem === works.itemNum
     })
-    const { url, imgUrl, title, disc, text } = work[0]
+    const { url, imgUrl, title, disc } = work[0]
     
     return (
       <div className="work-content">
@@ -52,7 +52,6 @@ class Work extends React.Component {
                 <div className="w-title-box">
                   <div className="title">{title}</div>
                   <div className="disc">{disc}</div>
-                  <div className="text">{text}</div>
                 </div>
               </div>
             </Link>
