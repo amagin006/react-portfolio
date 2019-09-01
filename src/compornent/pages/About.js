@@ -14,8 +14,10 @@ class About extends React.Component {
         <div className="who-sec">
           <div className="a-section1" data-delighter>
             <div className="section-inner" data-delighter>
-              <div className="bg-1 left" data-delighter></div>
-              <span>scroll</span>
+              <div className="who-fixed-bg" data-delighter>
+                <div className="bg-1 left" data-delighter></div>
+                <span>scroll</span>
+              </div>
             </div>
           </div> 
           <div className="who-text-block-sp">

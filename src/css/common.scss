@@ -111,8 +111,8 @@ $breakpoints: (
     z-index: 5000;
     a {
       display: inline-block;
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       margin-left: 5px;
       img {
         width: 100%;
@@ -407,10 +407,27 @@ $breakpoints: (
   .section-inner {
     height: 100%;
     opacity: 0;
-    background: url(../img/IMGP5090.jpg) no-repeat center center/ cover;
-    background-attachment: fixed;
+    // background: url(../img/IMGP5090.jpg) no-repeat center center/ cover;
+    // background-attachment: fixed;
     position: relative;
-    overflow: hidden;
+    .who-fixed-bg {
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100vh;
+      background: url(../img/IMGP5090.jpg) no-repeat center center/ cover;
+      transition: all 0.8s ease-out;
+      transition-delay: 1s;
+      &.started {
+        top: 50px;
+        left: 50px;
+        width: calc(100% - 100px);
+        height: calc(100% - 100px);
+      }
+    }
     span {
       position: absolute;
       bottom: 30px;
@@ -431,13 +448,7 @@ $breakpoints: (
       transition: all 1.6s ease-out 0.6s;
     }
   }
-  &.started {
-    padding: 50px;
-    transition: all 0.8s ease-out 1.8s;
-    @include mq(md) {
-        padding: 0;
-    }
-  }
+
   .bg-1 {
     position: absolute;
     top: 0;
@@ -458,10 +469,12 @@ $breakpoints: (
 }
 
 .a-section2 {
+  background: #fff;
   height: 100vh;
 }
 
 .a-section3 {
+  background: #fff;
   height: 100vh;
   .bg-3 {
     width: 100%;
@@ -717,6 +730,9 @@ $breakpoints: (
         font-size: 3.0rem;
         padding: 8px 15px;
         border: 1px solid #fff;
+        @include mq(sm) {
+          font-size: 1.6rem;
+        }
       } 
       &:hover {
         transform: translateY(-50%) scale(1.05);
