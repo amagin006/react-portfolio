@@ -1,27 +1,34 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import Header from './header/Header';
-import Home from './Home';
-import About from './pages/About';
-import Work from './pages/Work';
-import Page404 from './Page404'
+import '../compornent/common/style.css';
 import '../css/common.scss';
+import Header from './header/Header';
+import Continer from './Container';
 
 class App extends React.Component {
 
+  state = {
+    overflow: false
+  }
+
+  onClick = () => {
+    this.setState({overflow: true})
+    setTimeout(() => {
+      this.setState({overflow: false})
+    }, 2000);
+  }
+
   render() {
+
     return (
       <BrowserRouter>
-        <div>
-          <Header /> 
-          <Switch>
-            <Route exact path='/' component={Home} 
-              pageClass={() => {this.changePageClass()}}/>
-            <Route exact path='/about' component={About}/>
-            <Route exact path='/work' component={Work}/>
-            <Route component={Page404} />
-          </Switch>
+        <div style={{ 
+          overflow: this.state.overflow ? "hidden" : "none",
+          height: this.state.overflow ? "100vh" : "auto",
+        }}>
+          <Header clickLinked={this.onClick} /> 
+          <Continer />
         </div> 
       </BrowserRouter>
     )
