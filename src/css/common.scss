@@ -144,6 +144,7 @@ $breakpoints: (
       top: unset;
       right: unset;
       bottom: 40px;
+      transform: translateX(-100%);
       a {
         transform: translateX(-800px);
         transition: all 0.6s ease-out;
@@ -386,9 +387,10 @@ $breakpoints: (
     display: none;
     font-family: 'Montserrat', sans-serif; 
     @include mq(md) {
+      background: #fff;
       display: block;
-      width: 80%;
-      margin: 40px auto;
+      width: 100%;
+      padding: 40px;
       h2 {
         font-size: 2.0rem;
         padding-bottom: 10px;
@@ -597,7 +599,7 @@ $breakpoints: (
       display: inline-block;
       line-height: 25px;
       padding-left: 30px;
-      margin-right: 15px;
+      margin: 0 15px 15px 0;
       &:hover {
         color: #fa7f7f;
       }
