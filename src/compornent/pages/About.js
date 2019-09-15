@@ -24,7 +24,7 @@ class About extends React.Component {
             <h2>About</h2>
             <p>Hi, I’m Shota Iwamoto from Japan. <br />
               Currently, I’ve learned Web & Mobile development in Vancouver, Canada.</p>
-            <p>I’m passionate about solve problem and writing code that works well and good performance. </p>
+            <p>I’m passionate about solving problem and writing code that works and performes well. </p>
             <p>I’ve worked as a freelance remotely for agencies, collaborated with people for businesses.  I always eager to learn more and communicate with people.</p>
           </div>
           <div className="a-section2">
@@ -67,8 +67,8 @@ class About extends React.Component {
             <div className="who-text-block" data-delighter>
               <h2>About</h2>
               <p>Hi, I’m Shota Iwamoto from Japan. <br />
-                Currently, I’ve learned Web & Mobile development in Vancouver, Canada.</p>
-              <p>I’m passionate about solve problem and writing code that works well and good performance. </p>
+              Currently, I’ve learned Web & Mobile development in Vancouver, Canada.</p>
+              <p>I’m passionate about solving problem and writing code that works and performes well. </p>
               <p>I’ve worked as a freelance remotely for agencies, collaborated with people for businesses.  I always eager to learn more and communicate with people.</p>
             </div>
           </div>
