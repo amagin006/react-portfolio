@@ -14,7 +14,10 @@ class Container extends React.Component {
 
   render() {
     return (
-      <Route render={({ location }) =>  (
+      <Route render={({ location }) =>  {
+        console.log('location?', location);
+
+        return (
         <TransitionGroup>
           <CSSTransition
             key={this.props.location.key}
@@ -23,7 +26,7 @@ class Container extends React.Component {
             >
             <div className="m-content-box">
               <ScrollToTop>
-                <Switch location={location}>
+                <Switch>
                   <Route exact path='/' component={Home} 
                     pageClass={() => {this.changePageClass()}}/>
                   <Route exact path='/about' component={About}/>
@@ -35,7 +38,9 @@ class Container extends React.Component {
             </div>
           </CSSTransition>
         </TransitionGroup>
-      )} />
+        )}
+      }
+      />
     );
   };
 }
