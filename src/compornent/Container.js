@@ -15,8 +15,6 @@ class Container extends React.Component {
   render() {
     return (
       <Route render={({ location }) =>  {
-        console.log('location?', location);
-
         return (
         <TransitionGroup>
           <CSSTransition

@@ -10,7 +10,7 @@ class Home extends React.Component {
             <div className="main-visual-title-block">
               <div className="title-top">React Web Developer</div>
               <div className="title-top">iOS Devoloper</div>
-              <h1>SHOTA <br className="lg-none"/>IWAMOTO</h1>
+              <h1>SHOTA IWAMOTO</h1>
             </div>
           </div>
         </div>
