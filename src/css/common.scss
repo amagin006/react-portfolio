@@ -327,16 +327,16 @@ $breakpoints: (
     transform: translateY(-50%);
     z-index: 15;
     .title-top {
-      font-size: 2.6rem;
+      font-size: 4.6rem;
       @include mq(sm) {
         font-size: 1.6rem;
       }
     }
     h1 {
-      font-size: 6.4rem;
-      @include mq(sm) {
-        font-size: 3.6rem;
-      }
+      font-size: 3.6rem;
+      // @include mq(sm) {
+      //   font-size: 3.6rem;
+      // }
     }
   }
 }
