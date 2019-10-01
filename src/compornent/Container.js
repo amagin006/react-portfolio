@@ -3,10 +3,10 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ScrollToTop from './common/ScrollToTop';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Works from './pages/Works';
-import WorksDetail from './pages/WorkDetail'
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Works from './pages/Works/Works';
+import WorksDetail from './pages/WorkDetail/WorkDetail'
 import Page404 from './pages/Page404'
 
 

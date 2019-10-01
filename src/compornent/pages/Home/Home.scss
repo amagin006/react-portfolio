@@ -1,0 +1,45 @@
+@import '../../../css/common.scss';
+
+.main-visual {
+  position: relative;
+}
+
+.main-visual-wrapper {
+  position: relative;
+  &::before {
+    content: '';
+    opacity: 0.4;
+    display: block;
+    width: 100%;
+    background: url(../../../img/main-bg.jpg) no-repeat center center/ cover;
+    height: 100vh;
+  }
+  .main-visual-title-block {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    z-index: 15;
+    @include mq(md) {
+      left: 10%;
+    }
+    .title-top {
+      font-weight: bold;
+      font-size: 4.6rem;
+      @include mq(md) {
+        font-size: 3.0rem;
+      }
+      @include mq(sm) {
+        font-size: 2.6rem;
+      }
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      margin-top: 30px;
+      @include mq(sm) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

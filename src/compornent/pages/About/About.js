@@ -1,6 +1,8 @@
 import React from 'react';
-import { aboutImages } from  '../../constants/workContentInfo';
-import Delighters from '../common/delighters'
+import { aboutImages } from  '../../../constants/workContentInfo';
+import Delighters from '../../common/delighters'
+
+import './About.scss'
 
 class About extends React.Component {
 

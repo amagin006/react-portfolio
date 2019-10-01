@@ -4,6 +4,8 @@ import mail from '../../img/mail-icon.png';
 import linkedin from '../../img/linkedin-icon.png';
 import github from '../../img/github-icon.png';
 
+import './Header.scss'
+
 class Header extends React.Component {
   state = {
     menuClick: false,

@@ -1,7 +1,8 @@
 import React from 'react';
-import Delighters from '../common/delighters'
+import Delighters from '../../common/delighters'
 
-import { workContents } from  '../../constants/workContentInfo';
+import './WorkDetail.scss'
+import { workContents } from  '../../../constants/workContentInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';

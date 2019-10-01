@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { workContents } from  '../../constants/workContentInfo';
+import './Works.scss'
+import { workContents } from  '../../../constants/workContentInfo';
 
 class Work extends React.Component {
   state = {
